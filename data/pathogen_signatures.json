@@ -1,0 +1,83 @@
+{
+  "_description": "Simplified pathogen signature sequences for biosafety screening. These are short marker fragments (20-40bp) from regulated pathogens for local screening. NOT a comprehensive database.",
+  "_warning": "This is a simplified screening tool. For production use, integrate with IGSC Regulated Pathogen Database.",
+  "regulated_pathogens": [
+    {
+      "name": "Variola major (Smallpox)",
+      "risk_group": 4,
+      "markers": [
+        {"gene": "CrmB", "signature": "ATGGATCCAACTATTATCAAAGTAGCTAAAGAT", "description": "Cytokine response modifier B"},
+        {"gene": "A-type inclusion protein", "signature": "ATGACGATGACAAATTCTATGGAATCAGGAGATC", "description": "ATI protein N-terminal"}
+      ]
+    },
+    {
+      "name": "Ebola virus (EBOV)",
+      "risk_group": 4,
+      "markers": [
+        {"gene": "VP40", "signature": "ATGAGGCGGGTTATATTGCCTACTGCTCCTCCTG", "description": "Matrix protein VP40"},
+        {"gene": "GP", "signature": "ATGGGCGTTACAGGAATATTGCAGTTACCTCGT", "description": "Glycoprotein N-terminal"}
+      ]
+    },
+    {
+      "name": "Bacillus anthracis (Anthrax)",
+      "risk_group": 3,
+      "markers": [
+        {"gene": "pagA", "signature": "ATGAAAAAACGGAATGAATTAGCTTCACCTCAAC", "description": "Protective antigen"},
+        {"gene": "lef", "signature": "ATGAATAAACAAGCAAATGAATTAGCTCAAGAGA", "description": "Lethal factor"}
+      ]
+    },
+    {
+      "name": "Yersinia pestis (Plague)",
+      "risk_group": 3,
+      "markers": [
+        {"gene": "caf1", "signature": "ATGAAAAAAATCAGTTCCGTTATCGCAGCCCTG", "description": "F1 capsule antigen"},
+        {"gene": "pla", "signature": "ATGAAGAAAATTTCCATTATTGCACTACTTCTG", "description": "Plasminogen activator"}
+      ]
+    },
+    {
+      "name": "Clostridium botulinum toxin",
+      "risk_group": 2,
+      "markers": [
+        {"gene": "botA", "signature": "ATGCCATTTGTTAATAAACAATTTAATTATAAAGA", "description": "Botulinum neurotoxin A"},
+        {"gene": "botB", "signature": "ATGCCTGTTAATACTTTTAATTATGATATAAAT", "description": "Botulinum neurotoxin B"}
+      ]
+    },
+    {
+      "name": "Francisella tularensis (Tularemia)",
+      "risk_group": 3,
+      "markers": [
+        {"gene": "fopA", "signature": "ATGAAACTTTTAAGTATAACTGCAGCCTTAATCG", "description": "Outer membrane protein FopA"}
+      ]
+    },
+    {
+      "name": "Influenza H5N1 (Avian flu)",
+      "risk_group": 3,
+      "markers": [
+        {"gene": "HA-H5", "signature": "ATGGAGAAAATAGTGCTTCTTCTTGCAATAGTC", "description": "Hemagglutinin H5 subtype"}
+      ]
+    },
+    {
+      "name": "Reconstructed 1918 Influenza",
+      "risk_group": 4,
+      "markers": [
+        {"gene": "HA-1918", "signature": "ATGAAGGCAAACCTACTGGTCCTGTTATGTGCA", "description": "1918 H1N1 Hemagglutinin"}
+      ]
+    },
+    {
+      "name": "Ricin toxin (Ricinus communis)",
+      "risk_group": 2,
+      "markers": [
+        {"gene": "RCA", "signature": "ATGAAACCAGGTAACACTTGTGACCCTGATTCT", "description": "Ricin A chain precursor"}
+      ]
+    }
+  ],
+  "screening_config": {
+    "min_match_length": 20,
+    "identity_threshold": 0.85,
+    "alert_level": {
+      "risk_group_4": "CRITICAL - Immediately terminate task",
+      "risk_group_3": "HIGH - Require explicit justification",
+      "risk_group_2": "MODERATE - Flag for review"
+    }
+  }
+}

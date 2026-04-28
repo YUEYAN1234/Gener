@@ -1,0 +1,46 @@
+{
+  "_description": "SantaLucia 1998 Unified Nearest-Neighbor Parameters for DNA. ΔH in cal/mol, ΔS in cal/(mol·K)",
+  "_reference": "SantaLucia J Jr. (1998) PNAS 95:1460-1465",
+  "stacking": {
+    "AA/TT": {"dH": -7900, "dS": -22.2},
+    "AT/TA": {"dH": -7200, "dS": -20.4},
+    "TA/AT": {"dH": -7200, "dS": -21.3},
+    "CA/GT": {"dH": -8500, "dS": -22.7},
+    "GT/CA": {"dH": -8400, "dS": -22.4},
+    "CT/GA": {"dH": -7800, "dS": -21.0},
+    "GA/CT": {"dH": -8200, "dS": -22.2},
+    "CG/GC": {"dH": -10600, "dS": -27.2},
+    "GC/CG": {"dH": -9800, "dS": -24.4},
+    "GG/CC": {"dH": -8000, "dS": -19.9}
+  },
+  "initiation": {
+    "init_gc": {"dH": 100, "dS": -2.8},
+    "init_at": {"dH": 2300, "dS": 4.1}
+  },
+  "symmetry_correction": {
+    "dS": -1.4,
+    "_note": "Applied when the duplex is self-complementary"
+  },
+  "salt_correction": {
+    "_formula": "1/Tm(salt) = 1/Tm(1M) + (4.29*fGC - 3.95)*1e-5*ln[Na+] + 9.40e-6*(ln[Na+])^2",
+    "_reference": "Owczarzy et al. (2004) Biochemistry 43:3537-3554",
+    "owczarzy_2004": {
+      "a": 4.29e-5,
+      "b": -3.95e-5,
+      "c": 9.40e-6
+    }
+  },
+  "mg_correction": {
+    "_formula": "1/Tm(Mg) = 1/Tm(1M) + a + b*ln[Mg] + fGC*(c + d*ln[Mg]) + 1/(2*(Nbp-1))*(e + f*ln[Mg] + g*(ln[Mg])^2)",
+    "_reference": "Owczarzy et al. (2008) Biochemistry 47:5336-5353",
+    "coefficients": {
+      "a": 3.92e-5,
+      "b": -9.11e-6,
+      "c": 6.26e-5,
+      "d": 1.42e-5,
+      "e": -4.82e-4,
+      "f": 5.25e-4,
+      "g": 8.31e-5
+    }
+  }
+}
